@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+  app1:
+    image: 'myapp:v1.0'
+    ports:
+      - '8080'
+    environment:
+      INST_NUM: 2
+  app2:
+    image: 'myapp:v2.0'
+    ports:
+      - '8080'
+    environment:
+      INST_NUM: 3
+    depends_on:
+      - app1
+
